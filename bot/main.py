@@ -8,7 +8,6 @@ from discord.ext import commands
 updatefunc = False
 bot = commands.Bot(command_prefix="~")
 TOKEN = os.getenv("DISCORD_TOKEN")
-URL = "https://KnobbyConcernedTitle.loganpollack.repl.co"
 
 @bot.event
 async def on_ready():
@@ -19,24 +18,7 @@ async def bal(ctx):
     #Shows @users Bal
     pass
 
-async def update_data(users, auth):
-  if not f'{auth}' in users:
-        users[f'{auth}'] = {}
-        users[f'{auth}']["bal"] = 0
-        users[f"{auth}"]["goose"] = 0
-        users[f"{auth}"]["goosestats"] = {}
-        users[f"{auth}"]["goosestats"]["kills"] = 0
-        users[f"{auth}"]["goosestats"]["power"] = 0                
-        users[f"{auth}"]["arrows"] = 0
-        users[f"{auth}"]["bow_and_arrow"] = 0
-        users[f"{auth}"]["propane"] = 0
-        users[f"{auth}"]["flame"] = 0
-        users[f"{auth}"]["rifle_bul"] = 0
-        users[f"{auth}"]["rifle"] = 0
-        users[f"{auth}"]["pistol"] = 0
-        users[f"{auth}"]["pistol_bul"] = 0
-        users[f"{auth}"]["speaker"] = 0
-        updatefunc = True
+
 @bot.command()
 async def select_gun(ctx):
     #Bot will say: @user select gun
@@ -72,6 +54,23 @@ async def on_message(message):
     
     await bot.process_commands(message)
 
-
+async def update_data(users, auth):
+  if not f'{auth}' in users:
+        users[f'{auth}'] = {}
+        users[f'{auth}']["bal"] = 0
+        users[f"{auth}"]["goose"] = 0
+        #users[f"{auth}"]["goosestats"] = {}
+        #users[f"{auth}"]["goosestats"]["kills"] = 0
+        #users[f"{auth}"]["goosestats"]["power"] = 0                
+        users[f"{auth}"]["arrows"] = 0
+        users[f"{auth}"]["bow_and_arrow"] = 0
+        users[f"{auth}"]["propane"] = 0
+        users[f"{auth}"]["flame"] = 0
+        users[f"{auth}"]["rifle_bul"] = 0
+        users[f"{auth}"]["rifle"] = 0
+        users[f"{auth}"]["pistol"] = 0
+        users[f"{auth}"]["pistol_bul"] = 0
+        users[f"{auth}"]["speaker"] = 0
+        updatefunc = True
 server.server()
 bot.run(TOKEN)
