@@ -68,7 +68,7 @@ async def select(ctx):
 
 @bot.event
 async def on_message(message):
-    with open('data', 'r') as f:
+    with open('data.json', 'r') as f:
       users = json.load(f)
       await update_data(users, str(ctx.author))
       with open('data.json', 'w') as f:
