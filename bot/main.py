@@ -9,8 +9,12 @@ from discord.ext import commands
 bot = commands.Bot(command_prefix="~")
 TOKEN = os.getenv("DISCORD_TOKEN")
 URL = "https://KnobbyConcernedTitle.loganpollack.repl.co"
+
 @bot.event
 async def on_ready():
+    pload = {'username':'olivia','password':'123'}
+    r = requests.post('https://httpbin.org/post',data = pload)
+    print(r.json())
     print(f"Logged in as {bot.user.name}({bot.user.id})")
 
 @bot.command()
