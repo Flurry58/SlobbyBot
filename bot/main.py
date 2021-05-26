@@ -12,9 +12,6 @@ URL = "https://KnobbyConcernedTitle.loganpollack.repl.co"
 
 @bot.event
 async def on_ready():
-    pload = {'username':'olivia','password':'123'}
-    r = requests.post('https://httpbin.org/post',data = pload)
-    print(r.json())
     print(f"Logged in as {bot.user.name}({bot.user.id})")
 
 @bot.command()
@@ -67,10 +64,10 @@ async def select(ctx):
 
 @bot.event
 async def on_message(message):
-    with open('data.json', 'r') as f:
+    with open('bot/data.json', 'r') as f:
       users = json.load(f)
       await update_data(users, str(ctx.author))
-      with open('data.json', 'w') as f:
+      with open('bot/data.json', 'w') as f:
         json.dump(users, f)
     
     await bot.process_commands(message)
