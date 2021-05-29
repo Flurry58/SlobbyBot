@@ -1,4 +1,5 @@
 import discord
+import requests
 import os
 import json
 #import pynacl
