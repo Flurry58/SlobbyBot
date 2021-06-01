@@ -8,7 +8,6 @@ import server
 from discord.ext import commands
 updatefunc = False
 bot = commands.Bot(command_prefix="~")
-TOKEN = os.getenv("DISCORD_TOKEN")
 
 @bot.event
 async def on_ready():
@@ -62,5 +61,7 @@ async def on_message(message):
 async def update_data(auth):
   response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file': 'money','function': 'update', 'author': auth})
 		
+
+TOKEN = os.getenv("DISCORD_TOKEN")
 server.server()
-bot.run(TOKEN)
+client.run(TOKEN)
