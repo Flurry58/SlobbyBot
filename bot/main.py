@@ -7,7 +7,7 @@ import json
 import server
 from discord.ext import commands
 updatefunc = False
-bot = commands.Bot(command_prefix='~')
+bot = commands.Bot(command_prefix='^~^')
 client = discord.Client()
 @bot.event
 async def on_ready():
