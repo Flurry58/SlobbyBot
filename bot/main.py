@@ -5,7 +5,7 @@ import os
 import server
 from discord.ext import commands
 
-client = commands.Bot(command_prefix='&')
+client = commands.Bot(command_prefix='~')
 client2 = discord.Client()
 updatefunc = False
 
@@ -14,6 +14,12 @@ updatefunc = False
 @client.event
 async def on_ready():
     print("Bot is on")
+
+@client.command()
+async def bal(ctx):
+    response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'show_bal', 'author': str(ctx.author)})
+    json_response = response.json()
+    await ctx.send(json_response[0])
 
 #@client.command()
 #async def bal(ctx):
