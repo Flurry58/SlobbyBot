@@ -59,7 +59,10 @@ async def buy(ctx, *, item):
 
 @bot.event
 async def on_message(message):
-   await update_data(str(message.author))
+	print(message.content)
+	await client.process_commands(message)
+
+
 
 async def update_data(auth):
   response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file': 'money','function': 'update', 'author': auth})
