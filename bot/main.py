@@ -25,7 +25,7 @@ async def on_ready():
     #Bot will say: @user select gun
     
 #@client.command()
-async def select_rifle(ctx):
+#async def select_rifle(ctx):
     #Bot will say: @user select rifle
    
 
