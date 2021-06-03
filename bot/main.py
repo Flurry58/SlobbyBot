@@ -18,8 +18,8 @@ async def on_ready():
 
 @client.command()
 async def bal(ctx):
-    	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'show_bal', 'author': str(ctx.author)})
-    	json_response = response.json()
+	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'show_bal', 'author': str(ctx.author)})
+	json_response = response.json()
 	bal = json_response['money']
     	await ctx.send(bal)
 
