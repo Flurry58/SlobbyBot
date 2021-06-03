@@ -3,6 +3,7 @@ import os
 #import pynacl
 #import dnspython
 import server
+import requests
 from discord.ext import commands
 
 client = commands.Bot(command_prefix='~')
