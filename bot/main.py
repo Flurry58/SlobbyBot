@@ -43,7 +43,7 @@ async def select_rifle(ctx):
 #async def select(ctx):
     #Bot will say: The types of weapons are crossbow, gun, rifle, speaker, and flame
     
-@client.command(pass_conetext=True)
+@client.command(pass_context=True)
 async def say(ctx, *, messages):
 	await ctx.send(messages)
 
