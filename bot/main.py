@@ -8,7 +8,7 @@ from discord.ext import commands
 client = commands.Bot(command_prefix='&')
 client2 = discord.Client()
 updatefunc = False
-bot = commands.Bot(command_prefix="%")
+
 
 
 @client.event
