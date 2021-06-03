@@ -7,12 +7,15 @@ import json
 import server
 from discord.ext import commands
 updatefunc = False
-bot = commands.Bot(command_prefix='^~^')
+bot = commands.Bot(command_prefix='%')
 client = discord.Client()
 @bot.event
 async def on_ready():
     print(f"Logged in as {bot.user.name}({bot.user.id})")
 
+@bot.command()
+async def test(ctx):
+	await ctx.send("testing 123")
 @bot.command()
 async def bal(ctx):
     response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'show_bal', 'author': str(ctx.author)})
