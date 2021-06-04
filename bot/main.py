@@ -42,8 +42,18 @@ async def bal(ctx):
     #Bot will say: @user select flamethrower
  
 
-#@client.command()
-#async def select_bow(ctx):
+@client.command()
+async def select_bow(ctx):
+	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'select_weapon', 'author': str(ctx.author), 'weapon': 'bow_and_arrow', 'ammo':'arrows'})
+	json_response = response.json()
+	if json_response['weapon'] == 0:
+		await ctx.send("you don't have this weapon")
+	else:
+		await ctx.send("You have this weapon")
+	if json_response['ammo_ammount'] == 0:
+		await ctx.send("you don't have any ammo for this weapon!")
+	else:
+		await ctx.send(f'you have {json_response['ammo_ammount'} arrows')
     #Bot will say: @user select bow
    
 
