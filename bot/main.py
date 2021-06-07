@@ -46,7 +46,7 @@ async def select_pistol(ctx):
     
 @client.command()
 async def select_rifle(ctx):
-    	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'select_weapon', 'author': str(ctx.author), 'weapon': 'rifle', 'ammo':'rifle_bul'})
+	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'select_weapon', 'author': str(ctx.author), 'weapon': 'rifle', 'ammo':'rifle_bul'})
 	json_response = response.json()
 	ammo = json_response['ammo_ammount']
 	weapon_status = json_response['weapon']
@@ -64,7 +64,7 @@ async def select_rifle(ctx):
 
 @client.command()
 async def select_flame(ctx):
-    	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'select_weapon', 'author': str(ctx.author), 'weapon': 'flame', 'ammo':'propane'})
+	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'select_weapon', 'author': str(ctx.author), 'weapon': 'flame', 'ammo':'propane'})
 	json_response = response.json()
 	ammo = json_response['ammo_ammount']
 	weapon_status = json_response['weapon']
