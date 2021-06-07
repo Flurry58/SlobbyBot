@@ -23,14 +23,6 @@ async def bal(ctx):
 	bal = json_response['money']
 	await ctx.send(bal)
 
-@client.command()
-async def bal(ctx):
-	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'show_bal', 'author': str(ctx.author)})
-	json_response = response.json()
-	await ctx.send(json_response['money'])
-    #Shows @users Bal
-
- 
 
 @client.command()
 async def select_pistol(ctx):
@@ -90,9 +82,9 @@ async def select_bow(ctx):
     #Bot will say: @user select bow
    
 
-#@client.command()
-#async def select(ctx):
-    #Bot will say: The types of weapons are crossbow, gun, rifle, speaker, and flame
+@client.command()
+async def select(ctx):
+    await ctx.send("Weapon commands available: select_bow, select_flame, select_rifle, select_pistol")
     
 @client.command(pass_context=True)
 async def say(ctx, *, messages):
