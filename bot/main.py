@@ -23,23 +23,56 @@ async def bal(ctx):
 	bal = json_response['money']
 	await ctx.send(bal)
 
-#@client.command()
-#async def bal(ctx):
+@client.command()
+async def bal(ctx):
+	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'show_bal', 'author': str(ctx.author)})
+	json_response = response.json()
+	await ctx.send(json_response['money'])
     #Shows @users Bal
-   
 
-#@client.command()
-#async def select_gun(ctx):
-    #Bot will say: @user select gun
+ 
+
+@client.command()
+async def select_pistol(ctx):
+    	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'select_weapon', 'author': str(ctx.author), 'weapon': 'pistol', 'ammo':'pistol_bul'})
+	json_response = response.json()
+	if json_response['weapon'] == 0:
+		await ctx.send("you don't have this weapon")
+	else:
+		await ctx.send("You have this weapon")
+	if json_response['ammo_ammount'] == 0:
+		await ctx.send("you don't have any ammo for this weapon!")
+	else:
+		await ctx.send(f'you have {json_response['ammo_ammount'} arrows')
+ 
     
-#@client.command()
-#async def select_rifle(ctx):
-    #Bot will say: @user select rifle
+@client.command()
+async def select_rifle(ctx):
+    	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'select_weapon', 'author': str(ctx.author), 'weapon': 'rifle', 'ammo':'rifle_bul'})
+	json_response = response.json()
+	if json_response['weapon'] == 0:
+		await ctx.send("you don't have this weapon")
+	else:
+		await ctx.send("You have this weapon")
+	if json_response['ammo_ammount'] == 0:
+		await ctx.send("you don't have any ammo for this weapon!")
+	else:
+		await ctx.send(f'you have {json_response['ammo_ammount'} arrows')
+ 
    
 
-#@client.command()
-#async def select_flame(ctx):
-    #Bot will say: @user select flamethrower
+@client.command()
+async def select_flame(ctx):
+    	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'select_weapon', 'author': str(ctx.author), 'weapon': 'flame', 'ammo':'propane'})
+	json_response = response.json()
+	if json_response['weapon'] == 0:
+		await ctx.send("you don't have this weapon")
+	else:
+		await ctx.send("You have this weapon")
+	if json_response['ammo_ammount'] == 0:
+		await ctx.send("you don't have any ammo for this weapon!")
+	else:
+		await ctx.send(f'you have {json_response['ammo_ammount'} arrows')
  
 
 @client.command()
