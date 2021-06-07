@@ -29,7 +29,7 @@ async def bal(ctx):
 
 @client.command()
 async def select_pistol(ctx):
-    	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'select_weapon', 'author': str(ctx.author), 'weapon': 'pistol', 'ammo':'pistol_bul'})
+	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'select_weapon', 'author': str(ctx.author), 'weapon': 'pistol', 'ammo':'pistol_bul'})
 	json_response = response.json()
 	if json_response['weapon'] == 0:
 		await ctx.send("you don't have this weapon")
