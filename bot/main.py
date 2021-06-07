@@ -38,7 +38,7 @@ async def select_pistol(ctx):
 	if json_response['ammo_ammount'] == 0:
 		await ctx.send("you don't have any ammo for this weapon!")
 	else:
-		await ctx.send(f'you have {json_response['ammo_ammount'} arrows')
+		await ctx.send(f'you have {json_response['ammo_ammount']} arrows')
  
     
 @client.command()
