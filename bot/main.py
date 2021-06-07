@@ -11,7 +11,10 @@ client2 = discord.Client()
 updatefunc = False
 
 
-
+@client.command()
+async def hex(ctx, member: discord.Member):
+	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'hex', 'author': str(ctx.author), 'target': str(member)})
+	await ctx.send(f'{str(member)} has been hexed!')
 @client.event
 async def on_ready():
     print("Bot is on")
