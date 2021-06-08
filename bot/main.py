@@ -10,6 +10,9 @@ client = commands.Bot(command_prefix='~')
 client2 = discord.Client()
 updatefunc = False
 
+@client.command()
+async def attack(ctx, weapon, member: discord.Member):
+	await ctx.send("Attack command coming soon")
 
 @client.command()
 async def hex(ctx, member: discord.Member):
@@ -95,7 +98,7 @@ async def select_bow(ctx):
 		await ctx.send("you don't have any ammo for this weapon!")
 	else:
 		await ctx.send(f'you have {ammo} arrows')
-    #Bot will say: @user select bow
+
    
 
 @client.command()
