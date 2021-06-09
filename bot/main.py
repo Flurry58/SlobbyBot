@@ -10,6 +10,7 @@ client = commands.Bot(command_prefix='~')
 client2 = discord.Client()
 updatefunc = False
 
+
 @client.command()
 async def attack(ctx, weapon, member: discord.Member):
 	await ctx.send("Attack command coming soon")
@@ -106,8 +107,8 @@ async def select(ctx):
     await ctx.send("Weapon commands available: select_bow, select_flame, select_rifle, select_pistol")
     
 @client.command(pass_context=True)
-async def say(ctx, *, messages):
-	await ctx.send(messages)
+async def say(ctx):
+	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'health_restart'})
 
 
 TOKEN = os.getenv("DISCORD_TOKEN")
