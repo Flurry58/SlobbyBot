@@ -16,7 +16,10 @@ async def attack(ctx, weapon, member: discord.Member):
 	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'update', 'author': str(member)})
 	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'attack', 'author': str(ctx.author), 'target': str(member)})
 	json_response = response.json()
-	await ctx.send(json_response['response'])
+	if json_response['yes'] == 1:
+		await ctx.send(f'The targets health is now at {json_response['response']['health']}!')
+	else:
+		await ctx.send(json_response['response'])
 									
 										
 
