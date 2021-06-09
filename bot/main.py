@@ -13,7 +13,12 @@ updatefunc = False
 
 @client.command()
 async def attack(ctx, weapon, member: discord.Member):
-	await ctx.send("Attack command coming soon")
+	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'update', 'author': str(member)})
+	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'attack', 'author': str(ctx.author), 'target': str(member)})
+	json_response = response.json()
+	await ctx.send(json_response['response'])
+									
+										
 
 @client.command()
 async def hex(ctx, member: discord.Member):
