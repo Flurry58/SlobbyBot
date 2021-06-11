@@ -10,6 +10,9 @@ client = commands.Bot(command_prefix='~')
 client2 = discord.Client()
 updatefunc = False
 
+@client.command()
+async def testing(ctx):
+	await ctx.send("SlobbyBot is on and working")
 
 @client.command()
 async def attack(ctx, weapon, member: discord.Member):
