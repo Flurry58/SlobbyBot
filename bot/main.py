@@ -113,8 +113,22 @@ async def select_bow(ctx):
 	else:
 		await ctx.send(f'you have {ammo} arrows')
 
-   
-
+@client.command()
+async def buy(ctx, *, item_name, amount):
+	await ctx.send("coming soon")
+@client.command()
+async def show_shop(ctx):
+	embed = discord.Embed(title="Items Available", color=0xff00f6) 
+    	await ctx.send(embed=embed)
+	embed = discord.Embed(title="🍻Bar Membership", description="Buy a membership and treat yourself to some of the best beers in town -- Price: 100,000", color=0x1f85de)
+	await ctx.send(embed=embed)
+	embed = discord.Embed(title="🍺Beer", description="Order a nice refreshing Stein of beer -- Price: 10,000", color=0x1f85de)
+	await ctx.send(embed=embed)
+	embed = discord.Embed(title="💵Nine Thousand Dollars", description="Don't like your beer? You can sell it back to us for a 90% refund -- Price: 🍺1", color=0x1f85de)
+	await ctx.send(embed=embed)
+	embed = discord.Embed(title="🏹Crossbow", description="Don't like your beer? You can sell it back to us for a 90% refund -- Price: 🍺1", color=0x1f85de)
+	await ctx.send(embed=embed)
+	
 @client.command()
 async def select(ctx):
     await ctx.send("Weapon commands available: select_bow, select_flame, select_rifle, select_pistol")
