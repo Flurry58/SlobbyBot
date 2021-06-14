@@ -119,7 +119,7 @@ async def buy(ctx, *, item_name, amount):
 @client.command()
 async def show_shop(ctx):
 	embed = discord.Embed(title="Items Available", color=0xff00f6) 
-    	await ctx.send(embed=embed)
+	await ctx.send(embed=embed)
 	embed = discord.Embed(title="🍻Bar Membership", description="Buy a membership and treat yourself to some of the best beers in town -- Price: 100,000", color=0x1f85de)
 	await ctx.send(embed=embed)
 	embed = discord.Embed(title="🍺Beer", description="Order a nice refreshing Stein of beer -- Price: 10,000", color=0x1f85de)
