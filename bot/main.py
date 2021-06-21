@@ -16,8 +16,8 @@ async def testing(ctx):
 
 @client.command()
 async def attack(ctx, weapon, member: discord.Member):
-	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'update', 'author': str(member)})
-	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'attack', 'author': str(ctx.author), 'target': str(member)})
+	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'function': 'update', 'author': str(member)})
+	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'function': 'attack', 'author': str(ctx.author), 'target': str(member)})
 	json_response = response.json()
 	health = json_response['response']
 	health2 = health['health']
@@ -30,8 +30,8 @@ async def attack(ctx, weapon, member: discord.Member):
 
 @client.command()
 async def hex(ctx, member: discord.Member):
-	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'update', 'author': str(ctx.author)})
-	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'hex', 'author': str(ctx.author), 'target': str(member)})
+	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'function': 'update', 'author': str(ctx.author)})
+	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'function': 'hex', 'author': str(ctx.author), 'target': str(member)})
 	await ctx.send(f'{str(member)} has been hexed!')
 @client.event
 async def on_ready():
@@ -39,8 +39,8 @@ async def on_ready():
 
 @client.command()
 async def bal(ctx):
-	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'update', 'author': str(ctx.author)})
-	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'show_bal', 'author': str(ctx.author)})
+	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'function': 'update', 'author': str(ctx.author)})
+	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'function': 'show_bal', 'author': str(ctx.author)})
 	json_response = response.json()
 	dollers = json_response['dollers']
 	beer = json_response['beer']
@@ -49,8 +49,8 @@ async def bal(ctx):
 
 @client.command()
 async def select_pistol(ctx):
-	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'update', 'author': str(ctx.author)})
-	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'select_weapon', 'author': str(ctx.author), 'weapon': 'pistol', 'ammo':'pistol_bul'})
+	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'function': 'update', 'author': str(ctx.author)})
+	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'function': 'select_weapon', 'author': str(ctx.author), 'weapon': 'pistol', 'ammo':'pistol_bul'})
 	json_response = response.json()
 	ammo = json_response['ammo_ammount']
 	weapon_status = json_response['weapon']
@@ -67,8 +67,8 @@ async def select_pistol(ctx):
     
 @client.command()
 async def select_rifle(ctx):
-	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'update', 'author': str(ctx.author)})
-	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'select_weapon', 'author': str(ctx.author), 'weapon': 'rifle', 'ammo':'rifle_bul'})
+	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'function': 'update', 'author': str(ctx.author)})
+	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'function': 'select_weapon', 'author': str(ctx.author), 'weapon': 'rifle', 'ammo':'rifle_bul'})
 	json_response = response.json()
 	ammo = json_response['ammo_ammount']
 	weapon_status = json_response['weapon']
@@ -86,8 +86,8 @@ async def select_rifle(ctx):
 
 @client.command()
 async def select_flame(ctx):
-	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'update', 'author': str(ctx.author)})
-	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'select_weapon', 'author': str(ctx.author), 'weapon': 'flame', 'ammo':'propane'})
+	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'function': 'update', 'author': str(ctx.author)})
+	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'function': 'select_weapon', 'author': str(ctx.author), 'weapon': 'flame', 'ammo':'propane'})
 	json_response = response.json()
 	ammo = json_response['ammo_ammount']
 	weapon_status = json_response['weapon']
@@ -105,8 +105,8 @@ async def select_flame(ctx):
 
 @client.command()
 async def select_bow(ctx):
-	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'update', 'author': str(ctx.author)})
-	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'select_weapon', 'author': str(ctx.author), 'weapon': 'bow_and_arrow', 'ammo':'arrows'})
+	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'function': 'update', 'author': str(ctx.author)})
+	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'function': 'select_weapon', 'author': str(ctx.author), 'weapon': 'bow_and_arrow', 'ammo':'arrows'})
 	json_response = response.json()
 	ammo = json_response['ammo_ammount']
 	weapon_status = json_response['weapon']
@@ -124,7 +124,7 @@ async def select_bow(ctx):
 async def buy(ctx, item_name, amount):
 	amount = int(amount)
 	item_name = item_name + "p"
-	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'update', 'author': str(ctx.author)})
+	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'function': 'update', 'author': str(ctx.author)})
 	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'function': 'buy', 'author': str(ctx.author), 'item': item_name, 'amount':amount})
 	json_response = response.json()
 	beer_left = json_response["beer"]
@@ -136,7 +136,7 @@ async def buy(ctx, item_name, amount):
 		await ctx.send(f'You have bought {amount} of {item_name}. You now have {beer_left} Beers left and {dollers_left} Dollers left')
 @client.command()
 async def show_shop(ctx):
-	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'update', 'author': str(ctx.author)})
+	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'function': 'update', 'author': str(ctx.author)})
 	embed = discord.Embed(title="Items Available",description="When using the buy command please type the number in the brackets. Example: ~buy 2", color=0xff00f6) 
 	await ctx.send(embed=embed)
 	embed = discord.Embed(title="[1]🍻Bar Membership", description="Buy a membership and treat yourself to some of the best beers in town -- Price: 100,000", color=0x1f85de)
@@ -166,12 +166,12 @@ async def show_shop(ctx):
 	
 @client.command()
 async def select(ctx):
-	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'update', 'author': str(ctx.author)})
+	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'function': 'update', 'author': str(ctx.author)})
 	await ctx.send("Weapon commands available: select_bow, select_flame, select_rifle, select_pistol")
     
 @client.command(pass_context=True)
 async def say(ctx):
-	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'update', 'author': str(ctx.author)})
+	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'function': 'update', 'author': str(ctx.author)})
 	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'health_restart'})
 
 
