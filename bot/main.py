@@ -116,7 +116,8 @@ async def select_bow(ctx):
 
 @client.command()
 async def buy(ctx, *, item_name, amount):
-	await ctx.send("coming soon")
+	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'function': 'buy', 'author': str(ctx.author), 'item': 'item_name', 'amount':amount})
+	json_response = response.json()
 @client.command()
 async def show_shop(ctx):
 	embed = discord.Embed(title="Items Available",description="When using the buy command please type the number in the brackets. Example: ~buy 2", color=0xff00f6) 
