@@ -122,6 +122,7 @@ async def select_bow(ctx):
 
 @client.command()
 async def buy(ctx, item_name, amount):
+	amount = int(amount)
 	item_name = item_name + "p"
 	requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'file':'money', 'function': 'update', 'author': str(ctx.author)})
 	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'function': 'buy', 'author': str(ctx.author), 'item': item_name, 'amount':amount})
