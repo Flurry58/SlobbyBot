@@ -115,7 +115,7 @@ async def select_bow(ctx):
 		await ctx.send(f'you have {ammo} arrows')
 
 @client.command()
-async def buy(ctx, *, item_name, amount):
+async def buy(ctx, item_name, amount):
 	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'function': 'buy', 'author': str(ctx.author), 'item': 'item_name', 'amount':amount})
 	json_response = response.json()
 	beer_left = json_response["beer"]
