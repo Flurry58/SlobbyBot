@@ -118,6 +118,13 @@ async def select_bow(ctx):
 async def buy(ctx, *, item_name, amount):
 	response = requests.get('https://SlobbyBot-Database.loganpollack.repl.co', params={'function': 'buy', 'author': str(ctx.author), 'item': 'item_name', 'amount':amount})
 	json_response = response.json()
+	beer_left = json_response["beer"]
+	dollers_left = json_response["dollers"]
+	success = json_response["success"]
+	if sucess == "false":
+		await ctx.send("You do not have enough funds to buy this yet")
+	else:
+		await ctx.send(f'You have bought {amount} of {item_name}. You now have {beer_left} Beers left and {dollers_left} Dollers left')
 @client.command()
 async def show_shop(ctx):
 	embed = discord.Embed(title="Items Available",description="When using the buy command please type the number in the brackets. Example: ~buy 2", color=0xff00f6) 
